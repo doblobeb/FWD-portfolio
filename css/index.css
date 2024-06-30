@@ -17,6 +17,20 @@
   font-size: 25px;
 }
 
+footer {
+  position: absolute;
+  margin: 10px;
+  padding: 10px;
+  bottom: 5vh;
+}
+
+button {
+  font-family: Kameron;
+  font-size: 32px;
+  border: none;
+  background-color: white;
+}
+
 body {
   background-color: #f7e0e0;
   margin: 0px;
@@ -66,6 +80,15 @@ img.theface {
 
 div.theface {
   text-align: right;
+}
+
+div.comic {
+  flex-direction: column;
+  display: flex;
+  max-width: 20vw;
+  align-items: flex-end;
+  font-size: 30px;
+  font-family: "Kameron";
 }
 
 /* contacts */

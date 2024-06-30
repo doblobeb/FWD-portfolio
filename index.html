@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
   <head>
     <title>Danil Demin | Personal Website</title>
     <link rel="icon" href="/icons/favicon.jpg" />
@@ -12,6 +12,26 @@
     />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      async function comic() {
+        var comic_ID = await fetch(
+          "https://fwd.innopolis.university/api/hw2?email=da.demin@innopolis.university"
+        );
+        comic_ID = await comic_ID.json();
+        var comic_resp = await fetch(
+          "https://fwd.innopolis.university/api/comic?id=" + comic_ID
+        );
+        comic_resp = await comic_resp.json();
+        var date_opt = { month: "long", year: "numeric" };
+        var comic_date = new Date(Date.UTC(comic_resp.year, comic_resp.month));
+        document.getElementById("comic_place").src = comic_resp.img;
+        document.getElementById("comic_title").innerText =
+          comic_resp.safe_title;
+        document.getElementById("comic_date").innerText =
+          comic_date.toLocaleDateString(undefined, date_opt);
+        document.getElementById("comic_place").alt = comic_resp.alt;
+      }
+    </script>
   </head>
   <body>
     <div class="theface">
@@ -32,8 +52,20 @@
         <h1 class="thename">Danil Ivanovich Demin</h1>
       </div>
       <div class="thename">
-        <h2 class="thename">Innopolis | Frontend Developer</h2>
+        <h2 class="thename">
+          Innopolis | Frontend Developer <span id="out"></span>
+        </h2>
       </div>
     </main>
+    <div class="comic">
+      <span id="comic_title"> </span>
+      <img id="comic_place" />
+      <span id="comic_date"> </span>
+    </div>
+    <footer>
+      <button class="comic" onclick="comic()">
+        My XKCD comic <span id="myText"> </span>
+      </button>
+    </footer>
   </body>
 </html>
