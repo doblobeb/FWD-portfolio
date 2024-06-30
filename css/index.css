@@ -81,7 +81,7 @@ ul {
   display: grid;
 }
 
-ul.upper_links li a {
+ul.left_links li a {
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -92,13 +92,13 @@ ul.upper_links li a {
   color: #c92e2e;
 }
 
-ul.upper_links li img {
+ul.left_links li img {
   width: 128px;
   height: 128px;
   margin-right: 8px;
 }
 
-ul.lower_links li a {
+ul.right_links li a {
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -109,9 +109,9 @@ ul.lower_links li a {
   color: #c92e2e;
 }
 
-ul.lower_links li img {
-  width: 128px;
-  height: 128px;
+ul.right_links li img {
+  width: 2em;
+  height: 2em;
   margin-right: 8px;
 }
 
